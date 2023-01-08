@@ -1,0 +1,6 @@
+window main:
+    title "MainWindow"
+    size 1080 720
+
+    scenes [ "main.scn" ]
+END

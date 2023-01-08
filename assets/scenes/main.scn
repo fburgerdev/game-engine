@@ -1,0 +1,30 @@
+scene main:
+    main_camera "player"
+    scene_objects:
+        player:
+            transform:
+                pos 0.0 0.0 -10.0
+            END
+            camera:
+                projection "Perspective"
+            END
+            scripts [ "PlayerController" ]
+        END
+        cube:
+            render_object:
+                mesh "cube.obj"
+            END
+            scripts [ "Cube" ]
+        END
+        floor:
+            transform:
+                rot -1.5 0 0
+                scale 20 20 20
+            END
+            render_object:
+                mesh "plane.obj"
+                material "parrot.mat"
+            END
+        END
+    END
+END

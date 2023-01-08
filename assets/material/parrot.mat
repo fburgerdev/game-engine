@@ -1,0 +1,9 @@
+material parrot:
+    vertex "model.vs"
+    fragment "model.fs"
+    
+    uniforms:
+        u_texture "parrot.png"
+        u_tint 1.0 1.0 1.0
+    END
+END

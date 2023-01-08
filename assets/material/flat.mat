@@ -1,0 +1,9 @@
+material flat:
+    vertex "model.vs"
+    fragment "model.fs"
+    
+    uniforms:
+        u_texture "flat.png"
+        u_tint 1.0 1.0 1.0
+    END
+END
