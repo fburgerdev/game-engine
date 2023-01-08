@@ -6,7 +6,7 @@
 #include "utils/async.hpp"
 #include "event_api.hpp"
 #include "config.hpp"
-#include "editor/on_create.hpp"
+#include "asset_manager_api.hpp"
 #include <thread>
 
 namespace intern {

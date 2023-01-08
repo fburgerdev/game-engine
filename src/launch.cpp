@@ -2,8 +2,8 @@
 #include "asset_manager_api.hpp"
 #include "asset_manager/parrot_source.hpp"
 #include "debug_api.hpp"
-#include "editor/scripts/cube.hpp"
-#include "editor/scripts/player_controller.hpp"
+#include "assets/scripts/cube.hpp"
+#include "assets/scripts/player_controller.hpp"
 
 namespace intern {
     std::pair<adress, Script*> create_script_from_string(const string& name, SceneObject& scene_obj) {

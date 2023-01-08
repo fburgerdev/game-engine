@@ -18,6 +18,7 @@ project "parrot"
       ROOT .. "/vendor/**"
    }
    includedirs {
+      ROOT .. "/",
       ROOT .. "/src",
       ROOT .. "/src/api",
       ROOT .. "/vendor"
