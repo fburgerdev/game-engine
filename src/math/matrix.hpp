@@ -50,6 +50,8 @@ namespace intern {
         const T* data() const {
             return m_data;
         }
+
+        auto operator<=>(const Matrix<T, N, M>&) const = default;
     private:
         T m_data[N * M];
     };
@@ -77,6 +79,8 @@ namespace intern {
         const T& at(adress n, adress m) const {
             return at(n);
         }
+        
+        auto operator<=>(const Matrix<T, 2, 1>&) const = default;
 
         T x, y;
     };
@@ -111,6 +115,8 @@ namespace intern {
         const T& at(adress n, adress m) const {
             return at(n);
         }
+
+        auto operator<=>(const Matrix<T, 3, 1>&) const = default;
 
         T x, y, z;
     };
@@ -154,6 +160,8 @@ namespace intern {
         const T& at(adress n, adress m) const {
             return at(n);
         }
+
+        auto operator<=>(const Matrix<T, 4, 1>&) const = default;
 
         T x, y, z, w;
     };

@@ -38,7 +38,7 @@ namespace intern {
         virtual void set_cursor_shape(CursorShape shape) = 0;
         virtual void set_cursor_mode(CursorMode mode) = 0;
         virtual CursorMode get_cursor_mode() = 0;
-
+       
         virtual void bind() = 0;
         virtual void update() = 0;
 

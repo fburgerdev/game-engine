@@ -91,8 +91,10 @@ namespace intern {
                     s_renderers.at(window.get_id())->render_all();
                     window.update();
 
-                    std::thread(on_update, &window, frame_time).detach();
-                    std::thread(poll_events, &window).detach();
+                    on_update(&window, frame_time);
+                    poll_events(&window);
+                    // std::thread(on_update, &window, frame_time).detach();
+                    // std::thread(poll_events, &window).detach();
                 }
             }
             update_window_map();

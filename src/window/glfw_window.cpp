@@ -22,7 +22,7 @@ namespace intern {
             debug.error("glfw init failed");
             return;
         }
-
+           
         // create context
         glfwWindowHint(GLFW_RESIZABLE, 0);
         // glfwWindowHint(GLFW_DECORATED, 0);
