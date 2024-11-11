@@ -23,7 +23,6 @@ namespace intern {
         }
 
         virtual void on_update(Timestep ts) override {
-            debug.log(m_has_focus);
             if (!m_has_focus) {
                 return;
             }
@@ -31,9 +30,6 @@ namespace intern {
             // mouse move
             Vec2i cursor_pos = m_window.get_cursor_pos();
             Vec2i cursor_diff = cursor_pos - m_last_cursor_pos;
-            if (cursor_pos != m_last_cursor_pos) {
-                debug.log(cursor_pos);
-            }
 
             transform.rot.y += cursor_diff.x * mouse_sensitivity * ts.sec();
             transform.rot.x -= cursor_diff.y * mouse_sensitivity * ts.sec();

@@ -140,7 +140,6 @@ namespace intern {
 
     Filepath find_in_directory(const Filename& filename, const Directory& directory) {
         for (const Filepath& filepath : extract_files_recursive(directory)) {
-            std::cout << filepath << std::endl;
             if (get_filename(filepath) == filename) {
                 return filepath;
             }
