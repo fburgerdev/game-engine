@@ -2,7 +2,7 @@
 #if PT_WINDOW_API == PT_GLFW
 #include "glfw_window.hpp"
 #include "debug_api.hpp"
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <thread>
 
@@ -74,9 +74,8 @@ namespace intern {
         );
 
         // init glew
-        GLenum err = glewInit();
-        if (err != GLEW_OK) {
-            debug.error("glew init failed");
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+            debug.error("glad init failed");
             return;
         }
 

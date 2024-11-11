@@ -1,5 +1,5 @@
 #include "opengl_texture.hpp"
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 namespace intern {
     Texture_OPENGL::Texture_OPENGL(const RGBA* buffer, Vec2u size, const TexConfig& config)

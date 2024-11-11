@@ -1,5 +1,6 @@
 #include "file.hpp"
 #include <filesystem>
+#include <iostream>
 
 namespace intern {
     File::File(const Filepath& filepath) {
@@ -27,7 +28,7 @@ namespace intern {
             read_line();
             ++curr_line;
         }
-        m_stream.seekg(m_stream.tellg() + column);
+        m_stream.seekg(m_stream.tellg() + std::streamoff(column));
     }
     bool File::reached_end() {
         return m_stream.eof();
@@ -88,7 +89,7 @@ namespace intern {
         }
     }
     Filename get_filename(const Filepath& filepath) {
-        return filepath.substr(filepath.find_last_of('/') + 1);
+        return filepath.substr(filepath.find_last_of('\\') + 1);
     }
     Extension get_extension(const Filepath& filepath) {
         const Filename filename = get_filename(filepath);
@@ -105,7 +106,7 @@ namespace intern {
         List<Filepath> files;
         for (const auto& entry : std::filesystem::directory_iterator(directory)) {
             if (!std::filesystem::is_directory(entry.path())) {
-                files.push_back(entry.path());
+                files.push_back(entry.path().string());
             }
         }
         return files;
@@ -118,10 +119,10 @@ namespace intern {
             queue.pop();
             for (const auto& entry : std::filesystem::directory_iterator(directory)) {
                 if (std::filesystem::is_directory(entry.path())) {
-                    queue.push(entry.path());
+                    queue.push(entry.path().string());
                 }
                 else {
-                    files.push_back(entry.path());
+                    files.push_back(entry.path().string());
                 }
             }
         }
@@ -131,7 +132,7 @@ namespace intern {
         List<Directory> directories;
         for (const auto& entry : std::filesystem::directory_iterator(directory)) {
             if (std::filesystem::is_directory(entry.path())) {
-                directories.push_back(entry.path());
+                directories.push_back(entry.path().string());
             }
         }
         return directories;
@@ -139,6 +140,7 @@ namespace intern {
 
     Filepath find_in_directory(const Filename& filename, const Directory& directory) {
         for (const Filepath& filepath : extract_files_recursive(directory)) {
+            std::cout << filepath << std::endl;
             if (get_filename(filepath) == filename) {
                 return filepath;
             }

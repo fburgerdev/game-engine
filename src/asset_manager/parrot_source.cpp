@@ -4,6 +4,9 @@
 
 namespace intern {
     static string remove_whitespace(const string& str) {
+        if (str.empty()) {
+            return str;
+        }
         adress begin = 0;
         while (begin < str.size() && (str[begin] == ' ' || str[begin] == '\t')) {
             ++begin;

@@ -1,5 +1,5 @@
 #include "opengl_shader.hpp"
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include "debug_api.hpp"
 namespace intern {
     Shader_OPENGL::Shader_OPENGL(const string& vertexSrc, const string& fragmentSrc, const string& geometrySrc)

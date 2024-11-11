@@ -91,6 +91,7 @@ namespace intern {
             }
         }
         scene.set_main_camera(scene.get_scene_obj(std::get<string>(src.root.values.at("main_camera").data)));
+        return scene;
     }
 
     Event Window::pop_event() {

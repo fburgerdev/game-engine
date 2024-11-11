@@ -1,4 +1,4 @@
 .vscode
 bin
-build/Makefile
-build/parrot.make
+build/**
+!build/premake5.lua

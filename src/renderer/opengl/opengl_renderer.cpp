@@ -6,7 +6,7 @@
 #include "utils/file.hpp"
 #include "scene_api.hpp"
 #include "renderer/projection.hpp"
-#include <GL/glew.h>
+#include <glad/glad.h>
 
 namespace intern {
     // static Image s_image;
